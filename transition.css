@@ -1,0 +1,16 @@
+.shape{
+    width: 200px;
+    height: 200px;
+    transition: width 1.5s, height 2s,border-radius 3.5s ;
+    background-color: aquamarine;
+    text-align:center;
+    padding: 30px;
+    box-sizing:border-box;
+}
+
+.shape:hover{
+    width: 500px;
+    height: 500px;
+    border-radius: 700px;
+    cursor: pointer;
+}
