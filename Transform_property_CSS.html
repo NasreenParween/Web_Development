@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Transform</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            height: 80vh;
+            background-color: burlywood;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: brown;
+            border: 2px solid black;
+            border-radius: 8px;
+            height: 400px;
+            width: 400px;
+            transition: all 0.5s ease-in-out;
+            font-size: 30px;
+            margin: 10px;
+            padding: 5px;
+        } 
+        .box:hover{
+            /* transform: rotate(360deg); */
+            /* transform: skew(40deg); */
+            /* transform: scale(2); */
+            /* transform: translateX(123px); */
+            /* transform: translateY(123px); */
+            transform: translate(123px, 123px);
+
+        }
+        #b1{
+            background-color: green;
+        }
+        #b2{
+            background-color: yellow;
+        }
+        .p{
+            background-color: rgb(179, 130, 224);
+            font-size: 20px;
+            color: rgb(61, 3, 3);
+            border: 2px solid blue;
+            margin: 5px;
+            padding: 4px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Transform in css</h1>
+        <div class="box">This is a box1</div>
+        <div id="b1" class="box">This is a box2</div>
+        <div id="b2" class="box">This is a box3</div>
+    </div>
+    <div class="p">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, temporibus libero. Ullam ducimus earum at delectus dolorum cum adipisci atque unde illo, error, necessitatibus vel distinctio illum fugit expedita, est inventore veritatis iste consectetur vero perspiciatis. Quam beatae rerum quidem illo ipsam temporibus et deleniti corporis aliquid cum exercitationem voluptas voluptatem necessitatibus consequatur nesciunt sunt, voluptates laborum! Eaque sed aliquam quos quaerat officiis quidem aspernatur repellendus voluptas inventore, recusandae atque rerum nisi eligendi laborum quod dolorem delectus, error quia saepe enim cupiditate. Sint perferendis praesentium aspernatur facilis impedit, atque quisquam omnis dolore quis officia saepe quas corporis id vitae minima!</p>
+
+    </div>
+</body>
+</html>
