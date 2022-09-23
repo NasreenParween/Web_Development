@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=quer" />
+    <title>JQuery practice</title>
+    <style>
+      body {
+      }
+      h1 {
+        text-align: center;
+        background-color: pink;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        border: 4px solid blue;
+      }
+      .container {
+        height: 100%;
+        width: 100%;
+        background-color: rgb(255, 53, 53);
+        border: 4px solid blue;
+        border-radius: 6px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      .class {
+        width: 300px;
+        height: 300px;
+        background-color: chartreuse;
+        border: 2px solid black;
+        margin: 10px;
+        padding: 4px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>MY HEADING</h1>
+    <div class="container">
+      <div class="class" id="box-1">
+        <h2>My first box</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+          nobis vitae in quos quod saepe, ab incidunt, laboriosam asperiores
+          eaque repudiandae dolor molestias culpa quaerat tenetur omnis
+          distinctio maiores? Quam.
+        </p>
+      </div>
+      <div class="class" id="box-2">
+        <h2>My secod box</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus totam fugit nostrum repellat nam. Modi voluptas vel
+          tenetur earum voluptatem iure totam dolorum quo amet consectetur,
+          reiciendis labore? Provident, dolor?
+        </p>
+      </div>
+      <div class="class" id="box-3">
+        <h2>My third box</h2>
+        <p>
+          ipsum dolor sit amet consectetur adipisicing elit. Consequatur quidem,
+          unde, tempora totam ea numquam deleniti ab velit quis commodi at harum
+          quasi, maiores saepe natus asperiores ad! Temporibus, fugit.
+        </p>
+      </div>
+      <div class="class" id="box-4">
+        <h2>My fourth box</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. At dolores
+          animi in recusandae provident saepe suscipit modi nostrum
+          reprehenderit esse amet quas, illum ipsam reiciendis, nulla quos
+          ducimus, quo minima.
+        </p>
+      </div>
+      <div class="class" id="box-5">
+        <h2>My fifth box</h2>
+        <p>
+          ipsum dolor sit amet consectetur adipisicing elit. Soluta laboriosam
+          iusto, perferendis eos nostrum ea at doloribus excepturi, minima quam
+          aperiam, et est aspernatur. Ullam, blanditiis. Doloribus perspiciatis
+          dolores quaerat!
+        </p>
+      </div>
+    </div>
+
+    <script src="\jquery-3.6.1.min.js"></script>
+    <script>
+      $("p").click(function () {
+        console.log("clicked on paragraph");
+      });
+    // $("p").fadeOut(4000);
+    </script>
+  </body>
+</html>
