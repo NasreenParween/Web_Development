@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Birthday!!!!</title>
+    <style>
+        #l {
+            font-size: 30px;
+            text-align: center;
+            color: blueviolet;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #bd {
+            position: relative;
+            left: 10px;
+        }
+
+        body {
+            background-color: bisque;
+            text-align: center;
+        }
+
+        #b1 {
+            font-size: large;
+            background-color: blueviolet;
+            border: none;
+            color: white;
+            padding: 12px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            position: relative;
+            left: 30px;
+        }
+
+        #b1:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #res {
+            text-align: center;
+            position: inherit;
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(6, 6, 122);
+            font-weight: bold;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="bd" id="l">
+        <h1><b>Enter Your Birthday:</b></h1>
+    </label>
+    <input type="date" id="bd" name="bd">
+    <button type="button" id="b1"><b>SUBMIT</b></button>
+    <p id="res"><b></b></p>
+    <script>
+
+        const calc = document.getElementById("b1");
+        const days = ["Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"];
+
+        calc.addEventListener("click", function () {
+            var d = document.getElementById("bd").value;
+            var date = new Date(d);
+            var wd = days[date.getDay()];
+            document.getElementById("res").innerHTML = "Your birthday was on " + wd;
+        });
+    </script>
+</body>
+
+</html>
