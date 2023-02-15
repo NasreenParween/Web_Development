@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasreen Restaurant menu</title>
+    <!-- CSS only -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Trirong&effect=neon|outline|emboss|shadow-multiple">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: rgb(233, 217, 228);
+        }
+
+        .dish {
+
+            border-radius: 15px;
+            border: 2px solid grey;
+
+
+        }
+
+        img {
+            width: 23rem;
+            border-radius: 15px;
+
+        }
+
+        .name {
+            font-size: 1.5rem;
+            background-color: rgb(68, 65, 65);
+            color: chartreuse;
+
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: rgb(68, 65, 65);
+            background-color: chartreuse;
+        }
+
+        h1 {
+            color: rgb(5, 161, 98);
+            margin-bottom: 1rem;
+            text-align: center;
+            justify-content: center;
+            font-family: "Trirong", sans-serif;
+            font-weight: bold;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row menu">
+        <h1>Restaurant Menu</h1>
+        <div class="img dish col-sm-12 col-lg-6">
+
+            <img src="https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/1/2015/12/feature59.jpg?w=1200&h=628&fill=blur&fit=fill"
+                class="img col-lg-9  col-sm-0">
+            <div class="desc row">
+                <div class="name col-lg-6 col-sm-6">Chilli Potato</div>
+                <div class="price col-lg-6 col-sm-6">Rs 150/-</div>
+            </div>
+
+
+        </div>
+
+        <div class="dish col-sm-12 col-lg-6">
+
+            <img src="https://www.foodieist.com/wp-content/uploads/2020/12/veg-momos-recipe-672x372.jpg"
+                class="img col-lg-9  col-sm-0">
+            <div class="desc row">
+                <div class="name col-lg-6 col-sm-6">Momos</div>
+                <div class="price col-lg-6 col-sm-6">Rs 140/-</div>
+            </div>
+
+        </div>
+
+        <div class="dish  col-sm-12 col-lg-6">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP5qTrlFtjFqnUWg1__SqmbYMfuDm_i7r0Kg&usqp=CAU"
+                class="img col-lg-9  col-sm-0">
+            <div class="desc row">
+                <div class="name col-lg-6 col-sm-6">Smaose</div>
+                <div class="price col-lg-6 col-sm-6">Rs 80/-</div>
+            </div>
+
+        </div>
+
+        <div class="dish col-sm-12 col-lg-6">
+
+            <img src="https://globalupfront.com/wp-content/uploads/2022/06/COFFEE.jpg" class=" img col-lg-9  col-sm-0">
+            <div class="row desc">
+                <div class="name col-lg-6 col-sm-6">Coffee</div>
+                <div class="price col-lg-6 col-sm-6">Rs 60/-</div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+
+        addEventListener('resize', (event) => {
+            var width = window.innerWidth;
+            console.log(width);
+
+            if (width <= 768) {
+                img = document.getElementsByClassName('img');
+                console.log(img)
+                for (let i = 1; i <= img.length; i++) {
+                    img[i].style.width = '0rem';
+                }
+
+            }
+            else {
+                img = document.getElementsByClassName('img');
+                console.log(img)
+                for (let i = 1; i <= img.length; i++) {
+                    img[i].style.width = '23rem';
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
