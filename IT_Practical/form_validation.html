@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url("https://source.unsplash.com/random/baby");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            opacity: -20px;
+
+        }
+
+        .container {
+            border-radius: 10px;
+            padding: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 20px solid;
+            /* border-style: double; */
+            border-color: rgb(65, 2, 65);
+            width: 750px;
+            margin-top: 40px;
+            /* background-color: rgb(246, 218, 231); */
+            background-image: linear-gradient(to right ,rgb(151, 210, 253), rgb(248, 84, 84) , rgb(255, 255, 74) , pink);
+        }
+
+        .name {
+            font-size: 35px;
+            font-weight: bold;
+
+        }
+
+        .pass {
+            font-size: 35px;
+            font-weight: bold;
+
+        }
+
+        #g3 {
+            font-size: 35px;
+            font-weight: bold;
+
+        }
+
+        .gender {
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+
+        input[type=text] {
+            width: 200px;
+            height: 30px;
+        }
+
+        input[type=password] {
+            width: 200px;
+            height: 30px;
+        }
+
+        #sub1 {
+            width: 100px;
+            font-size: large;
+            float: left;
+            font-style: italic;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+
+        }
+
+        #sub1:hover {
+            color: rgb(65, 2, 65);
+            background-color: rgb(252, 223, 57);
+        }
+
+        h1 {
+
+            /* color: rgb(199, 3, 42); */
+            color: rgb(54, 4, 4);
+            font-weight: bold;
+            font-size: 50px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <form method="post" id="myform">
+            <h1>REGISTRATION FORM</h1>
+            <br><br>
+            <div class="name">
+                Name : <input type="text" id="t1" placeholder="Enter your name" required></input>
+                <br>
+                <br>
+            </div>
+            <div class="pass">
+                Password : <input type="password" id="p1" placeholder="Enter your password" required></input>
+                <br>
+                <br>
+            </div>
+
+            <label for="gen" id="g3"> Gender : </label><br> <br>
+            <div class="gender">
+                Male <input type="radio" id="g1" name="gen"></input>
+                Female<input type="radio" id="g2" name="gen"></input>
+                Other<input type="radio" id="g4" name="gen"></input>
+                <br>
+                <br>
+            </div>
+            <div class="sub">
+                <br>
+                <input type="submit" name="submit" id="sub1"></input>
+            </div>
+        </form>
+    </div>
+    <script>
+        $('#sub1').on('click', function (e) {
+            e.preventDefault();
+            var t1 = $('#t1').val();
+            var p1 = $('#p1').val();
+            var g1 = $('#g3').val();
+            var gender = $('input[name="gen"]:checked').val();
+            if (t1 == null || t1 == "") {
+                alert("username can't be blank");
+            }
+            if (p1.length < 6) {
+                alert('password should be greater than 6');
+            }
+            if (gender == undefined) {
+                alert('select gender please');
+            }
+        })
+    </script>
+</body>
+
+</html>
