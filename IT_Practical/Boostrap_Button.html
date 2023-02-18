@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			background-color: #efefa0;
+		}
+
+		p {
+			font-weight: bold;
+			padding: 30px;
+			text-align: center;
+			margin-top: 30px;
+		}
+
+		.colorp {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+			min-height: 100px;
+			margin-top: 50px;
+		}
+
+		button {
+			background-color: beige;
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			transition: all .5s ease;
+		}
+
+		.blue {
+			width: 130px;
+			color: black;
+			border: 2px solid #008CBA;
+		}
+
+		.red {
+			width: 130px;
+			color: black;
+			border: 2px solid #f44336;
+		}
+
+		.green {
+			color: black;
+			width: 130px;
+			border: 2px solid green;
+		}
+
+		.sizep {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+			min-height: 100px;
+		}
+
+		.one {
+			width: 130px;
+			color: black;
+			border: 2px solid red;
+		}
+
+		.two {
+			width: 130px;
+			color: black;
+			border: 2px solid blue;
+		}
+
+		.three {
+			width: 130px;
+			color: black;
+			border: 2px solid green;
+		}
+
+		.fontp {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+			min-height: 100px;
+		}
+
+		.sans {
+			width: 130px;
+			color: black;
+			border: 2px solid red;
+		}
+
+		.cur {
+			width: 130px;
+			color: black;
+			border: 2px solid blue;
+		}
+
+		.mono {
+			width: 130px;
+			color: black;
+			border: 2px solid green;
+		}
+	</style>
+</head>
+
+<body>
+	<p id="id1"> When getting HTML from an element, the innerHTML property will get the content of an element and return
+		it as one long string, including any markup that the element contains. When used to set new content for an
+		element, it will take a string that can contain markup and process that string, adding any elements within it to
+		the DOM tree. </p>
+	<div class="colorp">
+		<button class="btn green" onclick="change_color('green');"> Green </button>
+		<button class="btn blue" onclick="change_color('blue');"> Blue </button>
+		<button class="btn red" onclick="change_color('red');"> Red </button>
+	</div>
+	<div class="sizep">
+		<button class="btn one" onclick="change_size('10px');"> 10 </button>
+		<button class="btn two" onclick="change_size('20px');"> 20 </button>
+		<button class="btn three" onclick="change_size('30px');"> 30 </button>
+	</div>
+	<div class="fontp">
+		<button class="btn mono" onclick="change_font(' Monospace');"> Monospace </button>
+		<button class="btn cur" onclick="change_font('Brush Script MT');"> Cursive </button>
+		<button class="btn sans" onclick="change_font('Comic Sans MS');"> Serif </button>
+	</div>
+
+	<script>
+		function change_color(color) {
+			document.getElementById("id1").style.color = color;
+		}
+
+		function change_size(size) {
+			document.getElementById("id1").style.fontSize = size;
+		}
+
+		function change_font(font) {
+			document.getElementById("id1").style.fontFamily = font;
+		}
+	</script>
+
+</body>
+
+</html>
