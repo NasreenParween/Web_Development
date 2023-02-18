@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read data from External JSON file using JavaScript</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Trirong&effect=neon|outline|emboss|shadow-multiple">
+    <style>
+        body {
+            background-color: rgb(198, 253, 215);
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(9, 9, 220);
+            font-family: "Trirong", sans-serif;
+            font-size: 50px;
+        }
+
+        div {
+            font: 17px 'Calibri';
+        }
+
+        table,
+        th,
+        td {
+            font-size: 25px;
+            border: solid 2px black;
+            background-color: rgb(249, 233, 157);
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+            font: 200 20px;
+            font-family: cursive;
+            color: rgb(180, 10, 157);
+            margin: auto;
+        }
+
+        th {
+            font-weight: bold;
+            color: black;
+        }
+
+        table {
+            width: 90%;
+            height: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="font-effect-neon">
+        PET DETAILS
+    </h1>
+    <div id='showTable'></div>
+
+    <script>
+        // Create XMLHttpRequest object.
+        var oXHR = new XMLHttpRequest();
+        // Initiate request.
+        oXHR.onreadystatechange = reportStatus;
+        oXHR.open("GET", "data.json", true);  // get json file.
+        oXHR.send();
+        function reportStatus() {
+            if (oXHR.readyState == 4)   // Check if request is complete.
+            {
+                // Create an HTML table using a response from the server.
+                displayData(this.responseText);
+            }
+        }
+        // Create an HTML table using the JSON data.
+        function displayData(jsonData) {
+            var arrData = [];
+            arrData = JSON.parse(jsonData); 	// Convert JSON to array.
+            var col = [];
+            for (var i = 0; i < arrData.length; i++) {
+                for (var key in arrData[i]) {
+                    if (col.indexOf(key) === -1) {
+                        col.push(key);
+                    }
+                }
+            }
+            // Create a dynamic table.
+            var table = document.createElement("table");
+            // Create table header.
+            var tr = table.insertRow(-1);                   // Table row.
+            for (var i = 0; i < col.length; i++) {
+                var th = document.createElement("th");      // Table header.
+                th.innerHTML = col[i];
+                tr.appendChild(th);
+            }
+            // Add JSON to the table rows.
+            for (var i = 0; i < arrData.length; i++) {
+                tr = table.insertRow(-1);
+                for (var j = 0; j < col.length; j++) {
+                    var tabCell = tr.insertCell(-1);
+                    tabCell.innerHTML = arrData[i][col[j]];
+                }
+            }
+            // Finally, add the dynamic table to a container.
+            var divContainer = document.getElementById("showTable");
+            divContainer.innerHTML = "";
+            divContainer.appendChild(table);
+        };
+
+
+    </script>
+
+</body>
+
+</html>

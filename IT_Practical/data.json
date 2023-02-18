@@ -1,0 +1,34 @@
+[
+    {
+      "Name": "Toffee",
+      "Age": "1 months",
+      "Weight": "5 kg",
+      "Type": "Dog",
+      "Likes": "Sleeping"
+    },
+    {
+      "Name": "Jenny",
+      "Age": "3 months",
+      "Weight": "5 kg",
+      "Type": "Cat",
+      "Likes": "Eating"
+    },
+    {
+      "Name": "Benny",
+      "Age": "5 months",
+      "Weight": "4 kg",
+      "Type": "Rabbit",
+      "Likes": "Carrots"
+    },
+    {
+      "Name": "Dobby",
+      "Age": "1 month",
+      "Weight": "0.5 kg",
+      "Type": "Fish",
+      "Likes": "Swimming"
+    }
+  ]
+  
+  
+  
+  
