@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopwatch</title>
+    <style>
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgb(245, 209, 235);
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 40%;
+            min-width: 500px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            padding: 20px 0;
+            padding-bottom: 50px;
+            border-radius: 10px;
+        }
+
+        .timerDisplay {
+            position: relative;
+            width: 92%;
+            background: #ffffff;
+            left: 4%;
+            padding: 40px 0;
+            font-family: 'Roboto mono', monospace;
+            color: #0381bb;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 139, 253, 0.25);
+        }
+
+        .buttons {
+            width: 90%;
+            margin: 60px auto 0 auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .buttons button {
+            width: 120px;
+            height: 45px;
+            background-color: #205e94;
+            color: #ffffff;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .buttons button:nth-last-child(2) {
+            background-color: #d23332;
+        }
+
+        .buttons button:nth-last-child(1) {
+            background-color: #20b380;
+        }
+
+        p {
+            background-color: #bb9f03;
+            font-size: 60px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            margin-top: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>STOP WATCH</p>
+    </div>
+    <div class="timerDisplay">
+        00 : 00 : 00
+    </div>
+    <div class="buttons">
+        <button id="pauseTimer">Stop</button>
+        <button id="startTimer">Start</button>
+        <button id="resetTimer">Reset</button>
+    </div>
+    <script>
+        let [seconds, minutes, hours] = [0, 0, 0];
+        let timerRef = document.querySelector('.timerDisplay');
+        let int = null;
+
+        document.getElementById('startTimer').addEventListener('click', () => {
+            if (int !== null) {
+                clearInterval(int);
+            }
+            int = setInterval(displayTimer, 1000);
+        });
+
+        document.getElementById('pauseTimer').addEventListener('click', () => {
+            clearInterval(int);
+        });
+        document.getElementById('resetTimer').addEventListener('click', () => {
+            clearInterval(int);
+            [seconds, minutes, hours] = [0, 0, 0];
+            timerRef.innerHTML = '00 : 00 : 00 ';
+        });
+
+        function displayTimer() {
+            seconds += 1;
+            if (seconds == 60) {
+                seconds = 0;
+                minutes += 1;
+                if (minutes == 60) {
+                    minutes = 0;
+                    hours += 1;
+                }
+            }
+
+            let h = hours < 10 ? "0" + hours : hours;
+            let m = minutes < 10 ? "0" + minutes : minutes;
+            let s = seconds < 10 ? "0" + seconds : seconds;
+
+            timerRef.innerHTML = ` ${h} : ${m} : ${s} `;
+        }
+    </script>
+
+</body>
+
+</html>
